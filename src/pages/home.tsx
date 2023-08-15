@@ -56,7 +56,7 @@ export default function HomePage() {
       </div>
 
       {/* Logo */}
-      <div className="justify-center flex mt-56 md:mt-72">
+      <div className="justify-center flex mt-48">
         <div className="relative max-w-fit">
           <AppLogo />
           <img

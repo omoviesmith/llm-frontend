@@ -28,7 +28,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="pt-64 text-center font-futura">
+      <div className="pt-48 text-center font-futura">
         <p className="underline font-bold text-[32px] leading-[48px] uppercase">
           About the voice project
         </p>
