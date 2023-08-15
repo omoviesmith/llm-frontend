@@ -107,7 +107,7 @@ export default function ChatPage() {
 
       {/* Chat box */}
       <div className="mt-12 flex justify-center flex-grow">
-        <div className="max-w-[1100px] rounded-[20px] w-full max-h-[650px] h-full bg-[#313131B2] relative overflow-y-hidden pb-[100px] md:pb-[84px]">
+        <div className="max-w-[1100px] rounded-[20px] w-full max-h-[500px] h-full bg-[#313131B2] relative overflow-y-hidden pb-[100px] md:pb-[84px]">
           {/* Messages */}
           <div className="overflow-y-auto h-full" ref={messageListParentRef}>
             <div className="pb-5" ref={messageListRef}>
