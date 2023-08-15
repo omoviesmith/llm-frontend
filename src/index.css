@@ -1,0 +1,29 @@
+@import url("https://fonts.cdnfonts.com/css/futura-pt?styles=117663,117667,117668,117664,117666,117662,117665");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-image: url("pattern.png");
+  background-color: #202020;
+  background-position: 0% 0%;
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  color: #ffffff;
+}
+
+/** Custom stuffs **/
+.text-border-white {
+  color: #000000;
+  text-shadow: #ffffff, -1px -1px #ffffff;
+}
+
+@supports (-webkit-text-stroke: 1px #ffffff) {
+  .text-border-white {
+    text-shadow: none;
+    color: transparent;
+    -webkit-text-stroke: 1px #ffffff;
+  }
+}
