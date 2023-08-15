@@ -72,7 +72,7 @@ export default function HomePage() {
         <div className="max-w-2xl w-full relative">
           <input
             className="w-full rounded-full bg-[#313134B2] h-12 text-center text-sm outline-none focus:outline-gray-600 pl-5 pr-16"
-            placeholder="Ask your quesiton here."
+            placeholder="Ask your question here."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             onKeyUp={(e) => handleKeyUpInput(e.key)}
