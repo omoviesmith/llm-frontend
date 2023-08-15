@@ -35,7 +35,7 @@ export default function Message({ isReply, message }: IMessageProps) {
 
         <div
           className={classNames(
-            "w-full md:w-[540px]",
+            "w-full md:w-[540px] font-inter",
             isReply ? "text-start" : "text-end"
           )}
         >
