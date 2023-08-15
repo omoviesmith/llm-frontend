@@ -25,24 +25,28 @@ export default function Message({ isReply, message }: IMessageProps) {
     >
       <div
         className={classNames(
-          "flex gap-4 md:gap-[26px]",
+          "flex items-center gap-4 md:gap-[26px]",
           isReply
             ? "justify-start pr-3 md:pr-[30px]"
             : "justify-end pl-3 md:pl-[30px]"
         )}
       >
-        {isReply && <img src={userBot} alt="User logo" />}
+        {isReply && (
+          <img src={userBot} width={30} height={30} alt="User logo" />
+        )}
 
         <div
           className={classNames(
-            "w-full md:w-[540px] font-inter",
+            "w-full md:w-[540px] font-inter whitespace-pre-wrap",
             isReply ? "text-start" : "text-end"
           )}
         >
           {message}
         </div>
 
-        {!isReply && <img src={userHuman} alt="User logo" />}
+        {!isReply && (
+          <img src={userHuman} width={30} height={30} alt="User logo" />
+        )}
       </div>
     </div>
   );
