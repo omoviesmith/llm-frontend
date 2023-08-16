@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //
-const defaultApiUrl = "https://voice-osuhnty2vq-ts.a.run.app";
+const defaultApiUrl = "https://the-voice.onrender.com";
 
 //
 const axiosInstance = axios.create({
@@ -9,6 +9,7 @@ const axiosInstance = axios.create({
   headers: {
     "Content-Type": "application/json",
   },
+  withCredentials: true,
 });
 
 //
