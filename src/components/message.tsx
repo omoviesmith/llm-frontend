@@ -17,10 +17,9 @@ export default function Message({ isReply, message }: IMessageProps) {
   return (
     <div
       className={classNames(
-        "flex w-full justify-center p-5 md:p-9 text-[15px]",
-        {
-          "rounded-[20px] bg-[#373737B2]": isReply,
-        }
+        "flex w-full md:justify-center p-5 md:p-9 text-[15px]",
+        isReply ? "justify-start" : "justify-end",
+        { "rounded-[20px] bg-[#373737B2]": isReply }
       )}
     >
       <div
