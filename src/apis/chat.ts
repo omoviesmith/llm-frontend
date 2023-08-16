@@ -4,10 +4,11 @@ import axiosInstance from "../utils/axios";
  *
  */
 export async function askQuestion(question: string, userId: string) {
-  const response = await axiosInstance.post<IAskResponse>("/ask", {
-    question,
-    userId,
-  });
+  const response = await axiosInstance.post<IAskResponse>(
+    "/ask",
+    { question, userId },
+    { withCredentials: true }
+  );
   return response.data;
 }
 
@@ -16,7 +17,8 @@ export async function askQuestion(question: string, userId: string) {
  */
 export async function getChatHistory(userId: string) {
   const response = await axiosInstance.get<IChatHistoryResponse>(
-    `/chathistory/${userId}`
+    `/chathistory/${userId}`,
+    { withCredentials: true }
   );
   return response.data.chat_history;
 }
