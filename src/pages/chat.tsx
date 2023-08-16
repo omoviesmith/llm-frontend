@@ -130,7 +130,7 @@ export default function ChatPage() {
 
   //
   return (
-    <div className="w-full h-screen px-2 pt-2 pb-6 flex flex-col">
+    <div className="w-full h-screen px-2 pt-2 pb-2 flex flex-col">
       {/* Header */}
       <div className="grid grid-cols-3">
         <div className="col-span-3 md:col-span-1">
@@ -220,7 +220,7 @@ export default function ChatPage() {
           </div>
         </div>
 
-        <div className="w-full px-2 text-sm">
+        <div className="w-full px-2 pt-3 text-sm">
           <button
             className="text-red-400 hover:underline"
             onClick={() => resetUserSession()}
