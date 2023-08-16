@@ -54,7 +54,7 @@ export default function ChatPage() {
         .flat();
 
       if (formattedData.length) {
-        setMsgList(formattedData);
+        setMsgList((prev) => [...formattedData, ...prev]);
       }
     },
     enabled: !isFirstTime,
