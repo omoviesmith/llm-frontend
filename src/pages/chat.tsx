@@ -183,6 +183,14 @@ export default function ChatPage() {
                 </div>
               )}
             </div>
+
+            {msgList.length < 1 && (
+              <div className="flex justify-center items-center h-80">
+                <p className="text-3xl text-stone-500 font-inter">
+                  Start asking your questions!
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Footer */}
