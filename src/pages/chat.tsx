@@ -25,7 +25,7 @@ interface IMessage {
  *
  */
 export default function ChatPage() {
-  const { getUserId, isFirstTime } = useUserSession();
+  const { getUserId, isFirstTime, resetUserId } = useUserSession();
   const location = useLocation();
 
   //
@@ -36,13 +36,11 @@ export default function ChatPage() {
   const messageListRef = useRef<HTMLDivElement>(null);
   const messageListParentRef = useRef<HTMLDivElement>(null);
 
-  //
-  const userId = getUserId();
-
   // Get chat history of the user
   useQuery({
-    queryKey: ["chat-history", userId],
+    queryKey: ["chat-history"],
     queryFn: () => {
+      const userId = getUserId();
       return getChatHistory(userId);
     },
     onSuccess: (data) => {
@@ -63,12 +61,19 @@ export default function ChatPage() {
   // Ask a new question
   const mutation = useMutation({
     mutationFn: (question: string) => {
+      const userId = getUserId();
       return askQuestion(question, userId);
     },
     onSuccess: (data) => {
       setMsgList((msgs) => [...msgs, { text: data.answer, isReply: true }]);
     },
   });
+
+  //
+  function resetUserSession() {
+    resetUserId();
+    setMsgList([]);
+  }
 
   //
   function handleKeyUpInput(key: string) {
@@ -163,7 +168,7 @@ export default function ChatPage() {
       </div>
 
       {/* Chat box */}
-      <div className="mt-12 flex justify-center flex-grow">
+      <div className="mt-12 flex flex-grow flex-col justify-between items-center">
         <div className="max-w-[1100px] rounded-[20px] w-full max-h-[500px] h-full bg-[#313131B2] relative overflow-y-hidden pb-[100px] md:pb-[84px]">
           {/* Messages */}
           <div className="overflow-y-auto h-full" ref={messageListParentRef}>
@@ -213,6 +218,15 @@ export default function ChatPage() {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className="w-full px-2 text-sm">
+          <button
+            className="text-red-400 hover:underline"
+            onClick={() => resetUserSession()}
+          >
+            Delete history
+          </button>
         </div>
       </div>
     </div>

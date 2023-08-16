@@ -22,6 +22,13 @@ export default function useUserSession() {
   }
 
   //
+  function resetUserId() {
+    const newId = generateNewToken();
+    setSessionId(newId);
+    localStorage.setItem(tokenName, newId);
+  }
+
+  //
   useEffect(() => {
     const userId = localStorage.getItem(tokenName);
 
@@ -35,5 +42,5 @@ export default function useUserSession() {
     }
   }, []);
 
-  return { userId: sessionId, isFirstTime, getUserId };
+  return { userId: sessionId, isFirstTime, getUserId, resetUserId };
 }
