@@ -77,3 +77,16 @@ body {
     box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
   }
 }
+
+/**
+ ** Hiding Up/Down from number input 
+ **/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/** ENDS HERE **/
