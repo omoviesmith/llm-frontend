@@ -72,7 +72,7 @@ export default function HomePage() {
 
       {/* Logo */}
       <div className="justify-center flex mt-48">
-        <div className="relative max-w-fit">
+        <div className="relative max-w-fit cursor-default">
           <AppLogo />
           <img
             src={comment}
