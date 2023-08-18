@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 
 //
 import AppLogo from "../components/logo";
+import AutoSuggestInput from "../components/AutoSuggestInput";
 
 //
-import search from "../assets/search.svg";
 import comment from "../assets/comment.svg";
 
 //
@@ -23,8 +22,6 @@ export default function HomePage() {
   const navigate = useNavigate();
 
   //
-  const [searchTerm, setSearchTerm] = useState<string>("");
-
   const { data: faqQuestions } = useQuery({
     queryKey: ["faq-questions"],
     queryFn: () => {
@@ -43,18 +40,6 @@ export default function HomePage() {
   function navigateToChat(text: string) {
     if (!text) return;
     navigate("/chat", { state: { input: text } });
-  }
-
-  //
-  function submitInput() {
-    navigateToChat(searchTerm);
-  }
-
-  //
-  function handleKeyUpInput(key: string) {
-    if (key !== "Enter") return;
-
-    navigateToChat(searchTerm);
   }
 
   //
@@ -84,18 +69,8 @@ export default function HomePage() {
 
       {/* Input */}
       <div className="flex justify-center mt-10 mb-[70px]">
-        <div className="max-w-2xl w-full relative">
-          <input
-            className="w-full rounded-full bg-[#313134B2] h-12 text-center text-sm outline-none focus:none focus:border-gray-600 focus:border-2 pl-5 pr-16"
-            placeholder="Ask your question here."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyUp={(e) => handleKeyUpInput(e.key)}
-          />
-
-          <div className="absolute right-5 h-full flex items-center top-0 cursor-pointer">
-            <img src={search} alt="Search" onClick={() => submitInput()} />
-          </div>
+        <div className="max-w-2xl w-full">
+          <AutoSuggestInput />
         </div>
       </div>
 
