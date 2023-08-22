@@ -15,3 +15,10 @@ You can deploy without much hassle on free hosting services like Vercel, Netlify
 For that you simply have to create a project on the respective dashboard and import the github repository which contains the code.
 
 Everything will be handled by those services and the website should be up in minutes without any hassle at all.
+
+## Deploy to render
+
+- Connect to your github account
+- Import the repository containing the project code
+- In next step, change the _Publish Directory_ to `dist`
+- Press "Create static site"
