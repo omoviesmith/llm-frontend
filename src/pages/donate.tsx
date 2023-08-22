@@ -42,7 +42,7 @@ export default function DonatePage() {
       </div>
 
       <div className="flex-grow flex justify-center w-full my-20">
-        <div className="max-w-[1100px] w-full h-full grid grid-cols-2 gap-10">
+        <div className="max-w-[1100px] w-full h-full grid grid-cols-2 gap-2 md:gap-5 lg:gap-10">
           {/* Left side */}
           <div className="col-span-2 md:col-span-1 rounded-lg h-full bg-zinc-700 overflow-hidden">
             <img
@@ -62,7 +62,7 @@ export default function DonatePage() {
                 </p>
 
                 <p className="text-gray-300 mt-5">
-                  Welcome to our donations page dedicated to The Voice. Your
+                  Welcome to our donations page dedicated to BlakGPT. Your
                   donation ignites change, empowers voices, and drives impact.
                   Join us in our mission to amplify, inspire, and create a
                   harmonious world. Your contribution matters – make a

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //
-const defaultApiUrl = "https://the-voice.onrender.com";
+const defaultApiUrl = "https://thevoice.onrender.com/";
 
 //
 const axiosInstance = axios.create({

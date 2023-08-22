@@ -30,7 +30,7 @@ export default function AboutPage() {
 
       <div className="pt-48 text-center font-futura">
         <p className="underline font-bold text-[32px] leading-[48px] uppercase">
-          About the voice project
+          About the BlakGPT project
         </p>
 
         <p className="mt-3 text-gray-400">

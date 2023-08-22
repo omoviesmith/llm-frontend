@@ -29,13 +29,6 @@ export default function HomePage() {
     },
   });
 
-  // //
-  // const faqQuestions = [
-  //   "What is the Voice to Parliament?",
-  //   "Why do people say there is not enough detail?",
-  //   "Explain what the Voice will do in simple terms",
-  // ];
-
   //
   function navigateToChat(text: string) {
     if (!text) return;
@@ -61,7 +54,7 @@ export default function HomePage() {
           <AppLogo />
           <img
             src={comment}
-            alt="The Voice Comment"
+            alt="BlakGPT Comment"
             className="absolute md:-right-32 -top-20 right-0"
           />
         </div>
